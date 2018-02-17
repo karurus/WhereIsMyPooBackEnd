@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var selectQueryString = "SELECT * FROM Kanom ORDER BY Name";
+}
+
+
+<div class="row">
+    <div class="row" style="font-family:Verdana">
+        <div class="col-md-12">
+            <span style="font-weight: bold; font-size:medium">Just Booked</span>
+        </div>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 5px;
+                text-align: left;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Calories</th>
+                <th>Sugar</th>
+                <th>Oil</th>
+                <th>Sodium</th>
+            </tr>
+        </table>
+  
+        @foreach (var k in ViewBag.kanoms)
+    {
+        @*@foreach (Kanom k in ViewBag.kanoms)
+        {*@
+        <table>
+
+            <tr>
+                <td>@k.ID</td>
+                <td>@k.Name</td>
+                <td>@k.Unit</td>
+                <td>@k.Calories</td>
+                <td>@k.Sugar</td>
+                <td>@k.Oil</td>
+                <td>@k.Sodium</td>
+            </tr>
+
+        </table>
+
+
+
+
+}
+
+    </div>
+</div>
